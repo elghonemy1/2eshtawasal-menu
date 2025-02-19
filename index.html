@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>منيو قشطة وعسل</title>
     <style>
         body {
@@ -14,7 +13,6 @@
             margin: 0;
             overflow: hidden;
             position: relative;
-            flex-direction: column;
         }
         
         body::before {
@@ -30,13 +28,10 @@
         
         .logo-container {
             position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         
-        .logo-container img {
-            max-width: 40%;
+        .main-logo {
+            max-width: 35%;
             height: auto;
             position: relative;
             z-index: 1;
@@ -44,10 +39,13 @@
         }
 
         .second-logo {
-            max-width: 30%;
-            margin-top: 20px;
-            animation: fadeIn 2s ease-in 1.5s forwards;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            max-width: 12%;
+            height: auto;
             opacity: 0;
+            animation: fadeIn 2s ease-in 1.5s forwards;
         }
 
         @keyframes fadeIn {
@@ -89,6 +87,15 @@
                 opacity: 0;
             }
         }
+
+        @media (max-width: 768px) {
+            .main-logo {
+                max-width: 60%;
+            }
+            .second-logo {
+                max-width: 20%;
+            }
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -104,7 +111,7 @@
                 secondLogo.style.animation = "fadeOut 1.5s ease-out 0.5s forwards";
                 
                 setTimeout(() => {
-                    window.location.href = "https://drive.google.com/file/d/1sosff4huNf2DzDg2ZTEKGXBMtZUedX50/view";
+                    window.location.href = "https://drive.google.com/file/d/1sosff4huNf2DzDg2ZTEKGXBMtZUedX50/preview";
                 }, 2000);
             }, 4000);
         });
@@ -112,8 +119,8 @@
 </head>
 <body>
     <div class="logo-container">
-        <img class="main-logo" src="https://i.imgur.com/eCo7Ams.png" alt="لوجو المطعم">
-        <img class="second-logo" src="https://i.imgur.com/8fjOMgM.png" alt="لوجو إضافي">
+        <img class="main-logo" src="https://i.imgur.com/eCo7Ams.png" alt="لوجو المطعم" loading="lazy">
+        <img class="second-logo" src="https://i.imgur.com/PNYGCQt.png" alt="لوجو إضافي" loading="lazy">
     </div>
 </body>
 </html>
